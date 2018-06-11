@@ -14,3 +14,9 @@ img {
   font-size: 20%
   font
 }
+.circle {
+  background: rgb(93, 93, 250);
+  border-radius: 110%;
+  border-style: outset;
+
+}
