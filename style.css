@@ -1,4 +1,5 @@
-name {
+.name {
+  color: white;
   padding: 100px;
   margin: 500px;
 }
@@ -9,7 +10,7 @@ img {
   margin: 1px;
   border: 1px;
 }
-description {
-  text: comic-sans;
-
+.description {
+  font-size: 20%
+  font
 }
