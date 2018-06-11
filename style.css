@@ -1,4 +1,15 @@
+name {
+  padding: 100px;
+  margin: 500px;
+}
 body {
-  color: white;
-  background-color: salmon;
+  background: linear-gradient(rgba(250, 128, 114), rgba(250, 80, 84), rgba(250, 50, 74));
+}
+img {
+  margin: 1px;
+  border: 1px;
+}
+description {
+  text: comic-sans;
+
 }
