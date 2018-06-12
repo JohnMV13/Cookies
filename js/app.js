@@ -1,6 +1,5 @@
-function firstAndPike(min, max, avg) {
-  return Math.floor(Math.random() * Math.floor(65));
-}
+"use strict";
+
 var firstAndPike = {
   minCust: 23,
   maxCust: 65,
@@ -24,9 +23,7 @@ firstAndPike.cookies();
 console.log(firstAndPike.cookiesSold);
 
 
-function seaTac(min, max, avg) {
-  return Math.floor(Math.random() * Math.floor(65));
-}
+
 var seaTac = {
   minCust: 3,
   maxCust: 24,
@@ -130,7 +127,7 @@ var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "
 
 function simulateAndDisplayStoreData(location, id){
   var locationlist=document.getElementById(id);
-
+console.log(location);
   var cookieTotal = 0;
 
   for (var i = 0; i <location.cookiesSold.length; i++) {
@@ -140,13 +137,6 @@ function simulateAndDisplayStoreData(location, id){
     console.log({ cookiesForThisHour, cookieTotal});
    
    var listString = hours[i] + ": " + cookiesForThisHour + " cookies.";
-  }
-  location.customersPerHour();
-  var locationlist = document.getElementById(id);
-  for(var i = 0; i < location.avgCookies.length; i++) {
-    var cookiesForThisHour = location.hourlyArray[i];
-
-    var listString = hours[i] + ": " + cookiesForThisHour + " cookies.";
 
     var li = document.createElement("li");
     li.textContent = listString;
@@ -154,7 +144,8 @@ function simulateAndDisplayStoreData(location, id){
   }
 }
 
-simulateAndDisplayStoreData(firstAndPike, pike);
+
+simulateAndDisplayStoreData(firstAndPike, "pike");
 simulateAndDisplayStoreData(seaTac, SeaT);
 simulateAndDisplayStoreData(seaCent, SeaC);
 simulateAndDisplayStoreData(cap, Cap);
