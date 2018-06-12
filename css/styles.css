@@ -8,3 +8,9 @@ body {
   background: linear-gradient(rgba(1, 120, 248), rgba(1, 103, 247), rgba(1, 83, 247));
 
 }
+.pike {
+  margin: 10;
+  padding: 10;
+  outline: 15px;
+  outline-color: black;
+}
