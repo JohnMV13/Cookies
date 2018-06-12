@@ -7,16 +7,20 @@ var firstAndPike = {
   avgCookies: 6.3,
   cookiesSold: [],
   customersPerHour: function() {
-    return Math.floor(Math.random() * (this.max - this.min +1) +  this.min);
-
+    return Math.ceil(Math.random() * (this.maxCust - this.minCust) +  this.minCust);
+  },
+  hours: 15,
+  cookies: function() {
+    for(var i = 0; i < this.hours; i++)  {
+      this.cookiesSold[i] = Math.floor(this.customersPerHour()*this.avgCookies);
+    }
   }
 }
 
-console.log(firstAndPike);
+firstAndPike.cookies();
 
-for(var i = 0; i < 14; i++)  {
-  firstAndPike.cookiesSold.push();
-}
+console.log(firstAndPike.cookiesSold);
+
 // expected output: 0, 1 or 2
 
 // console.log(firstAndPike(1));
