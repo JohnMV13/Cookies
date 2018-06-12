@@ -136,17 +136,23 @@ console.log(location);
     cookieTotal = cookieTotal + cookiesForThisHour;
     console.log({ cookiesForThisHour, cookieTotal});
    
-   var listString = hours[i] + ": " + cookiesForThisHour + " cookies.";
-
+    var listString = hours[i] + ": " + cookiesForThisHour + " cookies.";
+  
+    location.customersPerHour();
+    var locationlist = document.getElementById(id);
+  
     var li = document.createElement("li");
     li.textContent = listString;
     locationlist.appendChild(li);
+    var totalLi = document.createElement("li");
+    totalLi.textContent="Total: " + cookieTotal;
+    locationlist.appendChild(totalLi);
   }
 }
 
 
 simulateAndDisplayStoreData(firstAndPike, "pike");
-simulateAndDisplayStoreData(seaTac, SeaT);
-simulateAndDisplayStoreData(seaCent, SeaC);
-simulateAndDisplayStoreData(cap, Cap);
-simulateAndDisplayStoreData(alki, Alki);
+simulateAndDisplayStoreData(seaTac, "SeaT");
+simulateAndDisplayStoreData(seaCent, "SeaC");
+simulateAndDisplayStoreData(cap, "Cap");
+simulateAndDisplayStoreData(alki, "Alki");
