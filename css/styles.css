@@ -1,16 +1,19 @@
 h1 {
-  font-size: 150%
+  font-size: 120%
 }
-
-
 
 body {
   background: linear-gradient(rgba(1, 120, 248), rgba(1, 103, 247), rgba(1, 83, 247));
-
+  margin: 5%;
+  border: 1px;
 }
 .pike {
-  margin: 10;
-  padding: 10;
+  margin: 5px;
+  padding: 5px;
   outline: 15px;
   outline-color: black;
+}
+.SeaT {
+  margin: right;
+
 }
