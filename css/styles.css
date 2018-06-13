@@ -6,9 +6,13 @@ header {
   color: white;
 }
 fieldset {
+  color: whitesmoke;
   width: 35%;
 }
-table {
+.info {
+  color: whitesmoke;
+}
+.storeinfo {
   border: Solid 5px black;
   width: 15%;
   height: 75%;
