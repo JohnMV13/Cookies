@@ -54,6 +54,62 @@ function simulateAndDisplayStoreData(location, id){
 
 }
 
+function Customers(name, address, city, state, numYears) {
+  this.name = name;
+  this.address = address;
+  this.city = city;
+  this.state = state;
+  this.numYears = +numYears;
+
+  Customer.all.push(this);
+  console.log("all customers", Customer.all);
+}
+
+Customer.all = [];
+Customer.renderAll = function() {
+  var customerLI = document.getElementById("customers");
+  customerLI.innerHTML = " ";
+  console.log("Customer list clearImmediate.");
+
+  for(var i = 0; i < Customer.all.length; i++) {
+    Customer.all[i].render();
+  }
+};
+
+Customer.prototype.toString = function() {
+  return this.name + " (" + this.numYears + " years)";
+}
+
+Customer.prototype.render = function () {
+  var customerLI = document.getElementById("customers");
+  
+  var li = document.createElement("li");
+  li.textContent = this.toString();
+  customerLI. appendChild(li);
+};
+
+var john = new Customer("John", "110 McCarren Drive", "Manchester", "IA");
+john.render();
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  console.log(event);
+
+  var name = event.target.name.value;
+  var address = event.target.address.value;
+  var city = event.target.city.value;
+  var state = event.target. state.value;
+  var numYears = event.target.numYears.value;
+
+  var newCustomer = new Customer( name, address, state, city, numYears );
+  console.log(newCustomer);
+
+  Customer.renderAll();
+}
+
+var form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 simulateAndDisplayStoreData(firstAndPike, "pike");
 simulateAndDisplayStoreData(seaTac, "SeaT");
