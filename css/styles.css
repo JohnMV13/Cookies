@@ -2,7 +2,7 @@ body {
   background: blue;
 
 }
-header {
+.name {
   color: white;
 }
 fieldset {
@@ -30,7 +30,7 @@ td {
 }
 th {
   border: solid 3px red;
-  padding: 35px;
+  padding: 60px;
   
 }
 a {
