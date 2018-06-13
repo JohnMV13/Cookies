@@ -1,18 +1,17 @@
 table {
   border: Solid 5px black;
-  width: 30%;
-  border-collapse: collapse;
+  width: 2%;
   background: blue;
 }
 thead {
   border: 5px black;
   background: red;
 }
-td, th {
+td {
   margin: 40px;
   border: 40px;
 }
 th{
   border: solid 2px red;
-  padding: 15px;
+  padding: 25px;
 }
