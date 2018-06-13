@@ -1,7 +1,9 @@
 table {
   border: Solid 5px black;
   width: 2%;
-  background: blue;
+  height: 5%;
+  
+  background: skyblue;
 }
 thead {
   border: 5px black;
