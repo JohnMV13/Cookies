@@ -27,36 +27,31 @@ var cap = new Store(20, 38, 2.3, "Capital Hill");
 var alki = new Store(2, 16, 4.6, "Alki");
 
 
-// var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
+var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
-// function simulateAndDisplayStoreData(location, id){
-//   var locationlist=document.getElementById(id);
-// console.log(location);
-//   var cookieTotal = 0;
+function simulateAndDisplayStoreData(location, id){
+  var locationlist=document.getElementById(id);
+console.log(location);
+  var cookieTotal = 0;
 
-//   for (var i = 0; i <location.cookiesSold.length; i++) {
-//     var cookiesForThisHour = location.cookiesSold[i]
-
-//     cookieTotal = cookieTotal + cookiesForThisHour;
-//     console.log({ cookiesForThisHour, cookieTotal});
-   
-//     var listString = hours[i] + ": " + cookiesForThisHour + " cookies.";
-  
-//     location.customersPerHour();
-//     var locationlist = document.getElementById(id);
-  
-//     var li = document.createElement("li");
-//     li.textContent = listString;
-//     locationlist.appendChild(li);
-//     var totalLi = document.createElement("li");
-//     totalLi.textContent="Total: " + cookieTotal;
-//     locationlist.appendChild(totalLi);
-//   }
-// }
+  var tbody = document.getElementsByTagName("tbody")[0];
+  var tr = document.createElement("tr");
+  tbody.appendChild(tr);
+  for( var i = 0; i < location.cookiesSold.length; i++) {
+    var cookiesForThisHour = location.cookiesSold[i]
+    cookieTotal = cookieTotal + cookiesForThisHour;
+    var td = document.createElement("td");
+    td.textContent = cookiesForThisHour;
+    tr.appendChild(td);
+  }
+  var td = document.createElement("td");
+  td.textContent = cookieTotal;
+  tr.appendChild(td);
+}
 
 
-// simulateAndDisplayStoreData(firstAndPike, "pike");
-// simulateAndDisplayStoreData(seaTac, "SeaT");
-// simulateAndDisplayStoreData(seaCent, "SeaC");
-// simulateAndDisplayStoreData(cap, "Cap");
-// simulateAndDisplayStoreData(alki, "Alki");
+simulateAndDisplayStoreData(firstAndPike, "pike");
+simulateAndDisplayStoreData(seaTac, "SeaT");
+simulateAndDisplayStoreData(seaCent, "SeaC");
+simulateAndDisplayStoreData(cap, "Cap");
+simulateAndDisplayStoreData(alki, "Alki");
