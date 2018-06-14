@@ -96,21 +96,20 @@ function renderTots() {
   var total = document.getElementById("totals");
   var tr = document.createElement("tr");
   total.appendChild(tr);
+  var hourTotal = 0;
   var td = document.createElement("td");
   td.textContent = "Totals";
   tr.appendChild(td);
-  for(var i = 0; i < hourlyTotals; i++) {
-    var totals = hourlyTotals[i];
-    hourlyTotals += totals;
-    cookieTotals = cookieTotals + totals;
+  for(var i = 0; i < hourlyTotals.length; i++) {
     td = document.createElement("td");
     tr.appendChild(td);
-    var finalTally = hoourlyTotals[i];
+    var finalTally = hourlyTotals[i];
+    hourTotal += finalTally;
     td.textContent = finalTally;
     console.log(renderTots);
   }
   var td = document.createElement("td");
-  td.textContent = store;
+  td.textContent = hourTotal;
   tr.appendChild(td);
 }
 
