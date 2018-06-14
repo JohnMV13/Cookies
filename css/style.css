@@ -46,11 +46,10 @@ img {
 a {
   color: whitesmoke;
 }
-.name {
-  color: white;
+.title {
+  color: black;
 }
 fieldset {
-  color: whitesmoke;
   width: 35%;
 }
 .info {
@@ -62,6 +61,7 @@ fieldset {
   height: 75%;
   background: skyblue;
   border-collapse: collapse;
+  color: black;
 }
 thead {
   border: 5px black;

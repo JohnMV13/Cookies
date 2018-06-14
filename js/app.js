@@ -1,9 +1,9 @@
 "use strict";
 
 function Store(minCust, maxCust, avgCookies, name) {
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookies = avgCookies;
+  this.minCust = +minCust;
+  this.maxCust = +maxCust;
+  this.avgCookies = +avgCookies;
   this.name = name;
   this.cookiesSold = [];
   
@@ -13,8 +13,8 @@ function Store(minCust, maxCust, avgCookies, name) {
 
 Store.all = [];
 Store.renderAll = function (){
-  var storeUL = document.getElementById("store");
-  storeUL.innerHTML = "";
+  var storeTB = document.getElementById("stores");
+  storeTB.innerHTML = "";
   console.log("Store list cleared");
 
   for (var i = 0; i < Store.all.length; i++) {
@@ -23,26 +23,36 @@ Store.renderAll = function (){
 };
 
 Store.prototype.render = function() {
-  var storeUL = document.getElementById("store");
+  var storeTB = document.getElementById("stores");
 
-  var li = document.createElement("li");
-  li.textContent = this.toString();
-  storeUL.appendChild(li);
+  var tr = document.createElement("tr");
+  storeTB.appendChild(tr);
+  var td = document.createElement("td");
+  tr.appendChild(td);
+  var name = this.name;
+  td.textContent = name;
+  for(var i = 0; i < this.cookiesSold.length; i++) {
+    td = document.createElement("td")
+    tr.appendChild(td);
+    var cookies = this.cookiesSold[i];
+    td.textContent = cookies;
+    console.log(this.cookiesSold[0]);
+  }
+  
 };
 
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  console.log(event);
-
   var min = event.target.min.value;
   var max = event.target.max.value;
   var avgCookies = event.target.avgCookies.value;
   var name = event.target.name.value;
 
+
   var newStore = new Store( min, max, avgCookies, name );
-  console.log(newStore);
+  newStore.cookies();
 
   Store.renderAll();
 }
