@@ -1,19 +1,38 @@
-h1 {
-  font-size: 120%
-}
-
 body {
-  background: linear-gradient(rgba(1, 120, 248), rgba(1, 103, 247), rgba(1, 83, 247));
-  margin: 5%;
-  border: 1px;
-}
-.pike {
-  margin: 5px;
-  padding: 5px;
-  outline: 15px;
-  outline-color: black;
-}
-.SeaT {
-  margin: right;
+  background: blue;
 
+}
+.name {
+  color: white;
+}
+fieldset {
+  color: whitesmoke;
+  width: 35%;
+}
+.info {
+  color: whitesmoke;
+}
+.storeinfo {
+  border: Solid 5px black;
+  width: 15%;
+  height: 75%;
+  background: skyblue;
+  border-collapse: collapse;
+}
+thead {
+  border: 5px black;
+  background-color: salmon;
+  
+}
+td {
+  margin: 40px;
+  border: 60px, red;
+}
+th {
+  border: solid 3px red;
+  padding: 60px;
+  
+}
+a {
+  color: white;
 }
