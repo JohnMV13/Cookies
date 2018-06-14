@@ -43,6 +43,41 @@ img {
   border-style: outset;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-a {
+b {
+  color: black;
+}
+.title {
+  color: black;
+}
+fieldset {
+  color: #000;
+  width: 35%;
+}
+.info {
   color: whitesmoke;
+}
+.storeinfo {
+  border: Solid 5px black;
+  width: 15%;
+  /* height: 75%; */
+  background: skyblue;
+  border-collapse: collapse;
+  color: black;
+}
+thead {
+  border: 5px black;
+  background-color: salmon;
+  
+}
+td {
+  margin: 40px;
+  border: 60px, red;
+}
+th {
+  border: solid 3px red;
+  padding: 60px;
+  
+}
+a {
+  color: white;
 }
