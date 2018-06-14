@@ -14,7 +14,7 @@ function Store(minCust, maxCust, avgCookies, name) {
 Store.all = [];
 Store.renderAll = function (){
   var storeUL = document.getElementById("store");
-  storeUL.innerHTML = " ";
+  storeUL.innerHTML = "";
   console.log("Store list cleared");
 
   for (var i = 0; i < Store.all.length; i++) {
@@ -47,7 +47,8 @@ function handleSubmit(event) {
   Store.renderAll();
 }
 
-
+var form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 Store.prototype.customersPerHour = function() {
   return Math.ceil(Math.random() * (this.maxCust - this.minCust) + this.minCust);
