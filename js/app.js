@@ -6,7 +6,49 @@ function Store(minCust, maxCust, avgCookies, name) {
   this.avgCookies = avgCookies;
   this.name = name;
   this.cookiesSold = [];
+  
+  Store.all.push(this);
+  console.log("all stores", Store.all);
 }
+
+Store.all = [];
+Store.renderAll = function (){
+  var storeUL = document.getElementById("store");
+  storeUL.innerHTML = "";
+  console.log("Store list cleared");
+
+  for (var i = 0; i < Store.all.length; i++) {
+    Store.all[i].render();
+  }
+};
+
+Store.prototype.render = function() {
+  var storeUL = document.getElementById("store");
+
+  var li = document.createElement("li");
+  li.textContent = this.toString();
+  storeUL.appendChild(li);
+};
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  console.log(event);
+
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var avgCookies = event.target.avgCookies.value;
+  var name = event.target.name.value;
+
+  var newStore = new Store( min, max, avgCookies, name );
+  console.log(newStore);
+
+  Store.renderAll();
+}
+
+var form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
 
 Store.prototype.customersPerHour = function() {
   return Math.ceil(Math.random() * (this.maxCust - this.minCust) + this.minCust);
@@ -26,8 +68,6 @@ var seaCent = new Store(11, 38, 3.7, "Seattle Center");
 var cap = new Store(20, 38, 2.3, "Capital Hill");
 var alki = new Store(2, 16, 4.6, "Alki");
 
-
-var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
 function simulateAndDisplayStoreData(location, id){
   location.cookies()

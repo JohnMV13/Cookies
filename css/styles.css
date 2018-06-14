@@ -1,19 +1,38 @@
-table {
+body {
+  background: blue;
+
+}
+.name {
+  color: white;
+}
+fieldset {
+  color: whitesmoke;
+  width: 35%;
+}
+.info {
+  color: whitesmoke;
+}
+.storeinfo {
   border: Solid 5px black;
-  width: 2%;
-  height: 5%;
-  
+  width: 15%;
+  height: 75%;
   background: skyblue;
+  border-collapse: collapse;
 }
 thead {
   border: 5px black;
+  background-color: salmon;
   
 }
 td {
   margin: 40px;
-  border: 40px;
+  border: 60px, red;
 }
-th{
-  border: solid 2px red;
-  padding: 25px;
+th {
+  border: solid 3px red;
+  padding: 60px;
+  
+}
+a {
+  color: white;
 }
