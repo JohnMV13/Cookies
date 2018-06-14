@@ -23,8 +23,11 @@ Store.renderAll = function (){
 };
 
 Store.prototype.render = function() {
-  var storeTB = document.getElementById("stores");
+  this.cookies()
 
+  var cookieTotal = 0;
+
+  var storeTB = document.getElementById("stores");
   var tr = document.createElement("tr");
   storeTB.appendChild(tr);
   var td = document.createElement("td");
@@ -32,13 +35,16 @@ Store.prototype.render = function() {
   var name = this.name;
   td.textContent = name;
   for(var i = 0; i < this.cookiesSold.length; i++) {
+    var cookiesPerHour = this.cookiesSold[i]
+    cookieTotal = cookieTotal + cookiesPerHour;
     td = document.createElement("td")
     tr.appendChild(td);
     var cookies = this.cookiesSold[i];
     td.textContent = cookies;
-    console.log(this.cookiesSold[0]);
   }
-  
+  var td = document.createElement("td");
+  td.textContent = cookieTotal;
+  tr.appendChild(td);
 };
 
 
